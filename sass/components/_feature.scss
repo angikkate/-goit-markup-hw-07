@@ -1,0 +1,36 @@
+.feature__list {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.feature__item {
+    flex-basis: calc((100% - 30px * 3) / 4);
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.feature__svg {
+    display: flex;
+    width: 270px;
+    height: 120px;
+    margin-bottom: 30px;
+    background-color: var(--bcg-team);
+    align-items: center;
+    justify-content: center;
+}
+
+.feature__title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16/14);
+    text-transform: uppercase;
+    color: var(--title-color);
+}
+
+.feature__text {
+    line-height: calc(24/14);
+}

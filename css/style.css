@@ -56,9 +56,9 @@ img {
     list-style: none;
 }
 
-.header-tel {
+/* .header-tel {
     text-decoration: underline;
-}
+} */
 
 /* Logo */
 .logo {
@@ -83,25 +83,25 @@ img {
 .header {
     border-bottom: 1px solid var(--border-head);
 }
-.header .container,
-.header-nav {
+.header__container,
+.nav__list {
     display: flex;
     margin-bottom: 0;
     align-items: center;
 }
 
-.header .logo {
+.header__logo {
     margin-right: 93px;
     padding-top: 24px;
     padding-bottom: 25px;
 }
 
-.header-nav .item:not(last-child),
-.header-link .item:not(last-child) {
+.nav__item:not(last-child),
+.header__item:not(last-child) {
     margin-right: 50px;
 }
 
-.header-nav .link {
+.nav__link {
     position: relative;
 
     display: block;
@@ -117,7 +117,7 @@ img {
     transition: color var(--trns-time);
 }
 
-.header-nav .link.current::after {
+.nav__link--current::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -132,7 +132,7 @@ img {
 
 /* header-link  */
 
-.header-link {
+.header__link {
     display: flex;
     align-items: center; 
     justify-content: baseline;
@@ -140,7 +140,7 @@ img {
     margin-right: 0;
 }
 
-.header-link .link {
+.header__contacts {
     display: flex;
     align-items: center;
     /* justify-content: baseline; */
@@ -154,15 +154,15 @@ img {
     transition: color var(--trns-time);
 }
 
-.header-link .item:last-child {
+.header__item:last-child {
     margin-right: 0;
 }
 
-.header-nav .link:hover,
-.header-nav .link:focus,
-.header-link .link:hover,
-.header-link .link:focus,
-.header-nav .link.current,
+.nav__link:hover,
+.nav__link:focus,
+.header__contacts:hover,
+.header__contacts:focus,
+.nav__link--current,
 .address .link:hover,
 .address .link:focus,
 .address .map:hover,
@@ -170,15 +170,15 @@ img {
     color: var(--accent-color);
 } 
 
-.header-link .icon {
+.header__icon {
     margin-right: 10px;
     fill: currentColor;
 
     transition: fill var(--trns-time);
 }
 
-.header-link .icon:hover,
-.header-link .icon:focus {
+.header__icon:hover,
+.header__icon:focus {
     fill: var(--accent-color);
 }
 
@@ -202,7 +202,7 @@ img {
                 url("../images/back-hero.jpg");
 }
 
-.hero-title {
+.hero__title {
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -229,7 +229,7 @@ img {
     padding-bottom: 94px;
 }
 
-.section-title {
+.section__title {
     margin-top: 0;
     margin-bottom: 50px;
     color: var(--title-color);
@@ -239,7 +239,7 @@ img {
     text-align: center;
 }
 
-.visualy-hidden {
+.section__title--visualy-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -254,21 +254,21 @@ img {
 }
 
 /* Features & Team titles*/
-.feature-list {
+.feature__list {
     display: flex;
     gap: 30px;
     align-items: flex-start;
 }
 
-.feature-list .item{
+.feature__item{
     flex-basis: calc((100% - 30px * 3) / 4);
 }
 
-.feature-list .item:last-child {
+.feature__item:last-child {
     margin-right: 0;
 }
 
-.feature-list .svg {
+.feature__svg {
     display: flex;
     width: 270px;
     height: 120px;
@@ -278,7 +278,7 @@ img {
     justify-content: center;
 }
 
-.feature-list .title {
+.feature__title {
     margin-bottom: 10px; 
     font-weight: 700;
     font-size: 14px;
@@ -287,27 +287,27 @@ img {
     color: var(--title-color);
 }
 
-.feature-list .text {
+.feature__text {
     line-height: calc(24/14);
 }
 
 /* Activities */
-.section.action {
+.action__section {
     padding-top: 0;
 }
 
-.action-list {
+.action__list {
     display: flex;
     gap: 30px;
     text-align: center;
 }
 
-.action-list .item {
+.action__item {
     position: relative;
     flex-basis: calc((100% - 30px * 2) / 3);
 }
 
-.action-list .item:last-child {
+.action__item:last-child {
     margin-right: 0;
 }
 
@@ -323,7 +323,7 @@ img {
     background: rgba(47, 48, 58, 0.8);
 } */
 
-.action-list .overlay-text {
+.action__overlay {
     position: absolute;
         display: flex;
         bottom: 0;
@@ -342,7 +342,7 @@ img {
 }
 
 /* Team */
-.section.team {
+.team__section {
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 94px;
@@ -350,17 +350,21 @@ img {
     background-color: var(--bcg-team);
 }
 
-.team-list {
+.team__list {
     display: flex;
     gap: 30px;
     text-align: center;
 }
 
-.team-list .item {
+.team__item {
     border: 1px solid var(--border-cards);
 }
 
-.team-list .descript-team {
+.team__item:last-child {
+    margin-right: 0;
+}
+
+.descript {
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: var(--white-color);
@@ -370,7 +374,7 @@ img {
     border-radius: 0px 0px 4px 4px;
 }
 
-.team-list .title {
+.descript__title {
     margin-top: 0;
     margin-bottom: 10px;
     font-weight: 500;
@@ -380,18 +384,14 @@ img {
     color: var(--title-color);
 }
 
-.team-list .text {
+.descript__text {
     font-size: 16px;
     line-height: calc(19/16);
     text-align: center;
     margin-bottom: 16px;;
 }
 
-.team-list .item:last-child {
-    margin-right: 0;
-}
-
-.team-list .social {
+.social {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -400,7 +400,7 @@ img {
     gap: 10px;
 }
 
-.social-link {
+.social__link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -412,21 +412,21 @@ img {
     transition: background-color var(--trns-time);
 }
 
-.social-link:hover,
-.social-link:focus {
+.social__link:hover,
+.social__link:focus {
     background-color: var(--accent-color);
 }
-.social-icon {
+.social__icon {
     fill: #afb1b8;
 }
 
-.social-link:hover .social-icon, 
-.social-link:focus .social-icon {
+.social__link:hover .social__icon, 
+.social__link:focus .social__icon {
     fill: var(--white-color);
 }
 
 /* Clients */
-.client-list {
+.client__list {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -435,7 +435,7 @@ img {
     gap: 30px;
 }
 
-.client-link {
+.client__link {
     display: flex;
     width: 170px;
     height: 92px;
@@ -448,13 +448,13 @@ img {
     transition: border-color var(--trns-time), color var(--trns-time);
 }
 
-.client-link:hover, 
-.client-link:focus {
+.client__link:hover, 
+.client__link:focus {
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
 
-.client-icon {
+.client__icon {
     fill: currentColor;
 }
 
@@ -611,7 +611,7 @@ footer {
 }
 
 /* Buttons */
-.button-studio {
+.hero__button {
     display: flex; 
     margin-top: 30px;
     margin-left: auto;
@@ -637,8 +637,8 @@ footer {
                 border-color var(--trns-time);
 }
 
-.button-studio:hover,
-.button-studio:focus {
+.hero__button:hover,
+.hero__button:focus {
     background-color: var(--button-hover);
     border-color: var(--button-hover);
 }
